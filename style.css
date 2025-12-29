@@ -1,0 +1,124 @@
+:root {
+    --vinho: #800000;
+    --branco: #ffffff;
+    --cinza-claro: #f4f4f4;
+    --texto: #333;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--cinza-claro);
+}
+
+/* Header */
+.main-header {
+    text-align: center;
+    padding: 30px 10px;
+    background: var(--branco);
+}
+
+.main-logo {
+    width: 100%;
+    max-width: 250px; /* Logo grande no topo */
+    height: auto;
+}
+
+.logo-container h1 {
+    color: var(--vinho);
+    margin: 10px 0 5px;
+}
+
+/* Navbar */
+.navbar {
+    background: var(--vinho);
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 25px;
+    display: block;
+    font-weight: bold;
+}
+
+/* Estilo Pinterest (Masonry) */
+.pinterest-grid {
+    column-count: 4; /* 4 colunas no PC */
+    column-gap: 15px;
+    padding: 20px 0;
+}
+
+.pin-item {
+    background: white;
+    margin-bottom: 15px;
+    break-inside: avoid;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.pin-item:hover {
+    transform: scale(1.02);
+}
+
+.pin-item img {
+    width: 100%;
+    display: block;
+    height: auto;
+}
+
+.pin-caption {
+    padding: 10px;
+    font-size: 0.9rem;
+    color: var(--texto);
+    text-align: center;
+}
+
+/* Rodapé */
+.main-footer {
+    background: #222;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.social-links {
+    margin-bottom: 20px;
+}
+
+.social-links a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.social-links a:hover {
+    color: var(--vinho);
+}
+
+/* Responsividade Celular */
+@media (max-width: 900px) {
+    .pinterest-grid { column-count: 2; }
+}
+
+@media (max-width: 600px) {
+    .pinterest-grid { column-count: 1; }
+    .navbar ul { display: none; flex-direction: column; width: 100%; }
+    .navbar ul.active { display: flex; }
+    .mobile-menu-btn { display: block; background: none; border: none; color: white; padding: 15px; cursor: pointer; width: 100%; }
+}
